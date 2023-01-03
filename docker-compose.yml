@@ -6,25 +6,10 @@ volumes:
   lighthouse_storage_volume: {}
   bff_storage_volume: {}
   lambdas_server_storage: {}
-  ipfs_staging: {}
-  ipfs_data: {}
   shared_keys:
 
 services:
-  
-  ipfs:
-    image: ipfs/go-ipfs:v0.13.0
-    container_name: ipfs
-    environment:
-      - IPFS_PROFILE=server
-    restart: always
-    volumes:
-      - ipfs_staging:/export
-      - ipfs_data:/data/ipfs
-    logging:
-      driver: syslog
-      options: { tag: ipfs }
-
+ 
   nats:
     image: nats:2.8
     container_name: nats
@@ -253,7 +238,6 @@ services:
       # - explorer-bff
       # - nats
       # - nats-exporter
-      - ipfs
     logging:
       driver: syslog
       options: { tag: nginx }
