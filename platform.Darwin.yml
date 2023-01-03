@@ -13,5 +13,9 @@ services:
   node-exporter: *COMMON
   content-server: *COMMON
   lambdas: *COMMON
+  lamb2: *COMMON
   cadvisor: *COMMON
   ipfs: *COMMON
+  nats: *COMMON
+  nats-exporter: *COMMON
+  explorer-bff: *COMMON
