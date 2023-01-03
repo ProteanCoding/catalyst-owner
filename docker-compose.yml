@@ -6,6 +6,8 @@ volumes:
   lighthouse_storage_volume: {}
   bff_storage_volume: {}
   lambdas_server_storage: {}
+  ipfs_staging: {}
+  ipfs_data: {}
   shared_keys:
 
 services:
@@ -217,10 +219,10 @@ services:
       - /var/lib/docker/:/var/lib/docker:ro
       - /dev/disk/:/dev/disk:ro
     depends_on:
-      - comms-server
+      # - comms-server
       - content-server
-      - lambdas
-      - explorer-bff
+      # - lambdas
+      # - explorer-bff
 
   nginx:
     container_name: nginx
